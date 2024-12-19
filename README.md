@@ -1,8 +1,8 @@
 # Modelo de projeto de ciência de dados
 
 Modelo de projeto de ciência de dados para ser utilizado como referência em projetos
-futuros. Desenvolvido por mim, [Francisco Bustamante](https://github.com/chicolucio),
-para alunos iniciantes em ciência de dados de meus cursos e mentorias.
+futuros. Desenvolvido, por [Francisco Bustamante](https://github.com/chicolucio),
+para seus alunos de ciência de dados.
 
 Inspiração: [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
 
