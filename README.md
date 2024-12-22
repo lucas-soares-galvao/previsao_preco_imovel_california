@@ -1,12 +1,10 @@
-# Modelo de projeto de ciência de dados
+# Projeto de Previsão de Preço de Imóvel na Califórnia (EUA)
 
-Modelo de projeto de ciência de dados para ser utilizado como referência em projetos
-futuros. Desenvolvido, por [Francisco Bustamante](https://github.com/chicolucio),
-para seus alunos de ciência de dados.
+Este projeto de ciência de dados tem como objetivo desenvolver um modelo de previsão de preços de imóveis na Califórnia, EUA. Utilizando técnicas de regressão e aprendizado de máquina, o projeto visa fornecer estimativas precisas dos preços dos imóveis com base em diversas características, como distrito, idade do imóvel, renda média do distrito, entre outras, conforme a imagem abaixo.
 
-Inspiração: [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+![imagem](relatorios/imagens/streamlit.png)
 
-Clique no botão **Use this template** para criar um novo repositório com base neste modelo.
+Link para simulação de preço do imóvel: [Clique aqui](https://lsg-previsao-preco-imovel-california.streamlit.app/)
 
 ## Organização do projeto
 
@@ -23,13 +21,24 @@ Clique no botão **Use this template** para criar um novo repositório com base 
 |
 ├── notebooks          <- Cadernos Jupyter. A convenção de nomenclatura é um número (para ordenação),
 │                         as iniciais do criador e uma descrição curta separada por `-`, por exemplo
-│                         `01-fb-exploracao-inicial-de-dados`.
+│                         `01-lsg-eda`.
 │
 |   └──src             <- Código-fonte para uso neste projeto.
 |      │
-|      ├── __init__.py  <- Torna um módulo Python
-|      ├── config.py    <- Configurações básicas do projeto
-|      └── graficos.py  <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      ├── __init__.py   <- Torna um módulo Python
+|      ├── auxiliares.py <- Scripts para função auxiliares no projeto
+|      ├── config.py     <- Configurações básicas do projeto
+|      ├── graficos.py   <- Scripts para criar visualizações exploratórias e orientadas a resultados
+|      └── models.py     <- Scripts para treinar modelos e fazer previsões
+|
+|   ├── 01-lsg-eda.ipynb                 <- Scripts para análise exploratória dos dados
+|   ├── 02-lsg-mapas-sns.ipynb           <- Scripts para analisar mapas com Seaborn
+|   ├── 03-lsg-geo.ipynb                 <- Scripts para analisar mapas com GeoPandas e Folium
+|   ├── 04-lsg-modelos-cat.ipynb         <- Scripts para treinar modelo de Regressão Linear usando variáveis categóricas
+|   ├── 05-lsg-modelos-cat-num.ipynb     <- Scripts para treinar modelo de Regressão Linear usando variáveis categóricas e numéricas
+|   ├── 06-lsg-modelos-pol.ipynb         <- Scripts para treinar modelo usando Features Polinomiais
+|   ├── 07-lsg-modelos-elasticnet.ipynb  <- Scripts para treinar modelo usando ElasticNet
+|   ├── 08-lsg-modelos-ridge.ipynb       <- Scripts para treinar modelo usando Ridge
 |
 ├── referencias        <- Dicionários de dados, manuais e todos os outros materiais explicativos.
 |
@@ -37,50 +46,33 @@ Clique no botão **Use this template** para criar um novo repositório com base 
 │   └── imagens        <- Gráficos e figuras gerados para serem usados em relatórios
 ```
 
-## Configuração do ambiente
+## Funcionalidades
 
-1. Faça o clone do repositório que será criado a partir deste modelo.
+- **Carregamento de Dados**: Funções para carregar e pré-processar dados de diferentes fontes.
+- **Modelagem**: Implementação de modelos de regressão para prever preços de imóveis.
+- **Visualização**: Ferramentas para visualização de dados geoespaciais e resultados de previsões.
+- **Interface Web**: Aplicação interativa desenvolvida com Streamlit para explorar os dados e previsões.
 
-    ```bash
-    git clone ENDERECO_DO_REPOSITORIO
+## Como Usar
+
+1. Clone o repositório:
+    ```sh
+    git clone <URL-do-repositório>
+    ```
+2. Crie e ative o ambiente virtual:
+    ```sh
+    conda env create -f ambiente.yml
+    conda activate <nome-do-ambiente>
+    ```
+3. Execute a aplicação Streamlit:
+    ```sh
+    streamlit run src/app.py
     ```
 
-2. Crie um ambiente virtual para o seu projeto utilizando o gerenciador de ambientes de sua preferência.
+## Contribuição
 
-    a. Caso esteja utilizando o `conda`, exporte as dependências do ambiente para o arquivo `ambiente.yml`:
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
 
-      ```bash
-      conda env export > ambiente.yml
-      ```
+## Licença
 
-    b. Caso esteja utilizando outro gerenciador de ambientes, exporte as dependências
-    para o arquivo `requirements.txt` ou outro formato de sua preferência. Adicione o
-    arquivo ao controle de versão, removendo o arquivo `ambiente.yml`.
-
-3. Verifique o arquivo `notebooks/01-fb-exemplo.ipynb` para exemplos
-de uso do código.
-4. Renomeie o arquivo `notebooks/01-fb-exemplo.ipynb` para um nome
-mais apropriado ao seu projeto. E siga a convenção de nomenclatura para os demais
-notebooks.
-5. Remova arquivos de exemplo e adicione os arquivos de dados e notebooks do seu
-projeto.
-6. Verifique o arquivo `notebooks/src/config.py` para configurações básicas do projeto.
-Modifique conforme necessário, adicionando ou removendo caminhos de arquivos e
-diretórios.
-7. Atualize o arquivo `referencias/01_dicionario_de_dados.md` com o dicionário de dados
-do seu projeto.
-8. Atualize o `README.md` com informações sobre o seu projeto.
-9. Adicione uma licença ao projeto. Clique
-[aqui](https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
-se precisar de ajuda para escolher uma licença.
-10. Renomeie o arquivo `.env.exemplo` para `.env`
-11. Adicione variáveis de ambiente sensíveis ao arquivo `.env`.
-
-Por padrão, o arquivo `.gitignore` já está configurado para ignorar arquivos de dados e
-arquivos de Notebook (para aqueles que usam ferramentas como
-[Jupytext](https://jupytext.readthedocs.io/en/latest/) e similares). Adicione ou remova
-outros arquivos e diretórios do `.gitignore` conforme necessário. Caso deseje adicionar
-forçadamente um Notebook ao controle de versão, faça um commit forçado com o
-comando `git add --force NOME_DO_ARQUIVO.ipynb`.
-
-Para mais informações sobre como usar Git e GitHub, [clique aqui](https://cienciaprogramada.com.br/2021/09/guia-definitivo-git-github/). Sobre ambientes virtuais, [clique aqui](https://cienciaprogramada.com.br/2020/08/ambiente-virtual-projeto-python/).
+Este projeto está licenciado sob a Licença MIT.
