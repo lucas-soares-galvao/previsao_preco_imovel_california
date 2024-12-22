@@ -6,6 +6,10 @@ Este projeto de ciência de dados tem como objetivo desenvolver um modelo de pre
 
 Link para simulação de preço do imóvel: [Clique aqui](https://lsg-previsao-preco-imovel-california.streamlit.app/)
 
+## Fonte dos Dados
+
+Para saber mais sobre a fonte de dados: [Clique aqui](referencias/01_dicionario_de_dados.md)
+
 ## Organização do projeto
 
 ```
