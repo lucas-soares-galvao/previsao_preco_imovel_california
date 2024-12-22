@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto de Previsão de Preço de Imóvel na Califórnia (EUA)
 
 Este projeto de ciência de dados tem como objetivo desenvolver um modelo de previsão de preços de imóveis na Califórnia, EUA. Utilizando técnicas de regressão e aprendizado de máquina, o projeto visa fornecer estimativas precisas dos preços dos imóveis com base em diversas características, como distrito, idade do imóvel, renda média do distrito, entre outras, conforme a imagem abaixo.
